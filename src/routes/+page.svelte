@@ -2,7 +2,7 @@
     import { QrCode } from "@lucide/svelte";
     import { qr } from "@svelte-put/qr/svg";
 
-    const MAX_CODE_LENGTH = 5;
+    const MAX_CODE_LENGTH = 6;
     const DEFAULT_TEXT = "https://www.youtube.com/watch?v=-XUxWllIpZk";
 
     let input = $state("");
