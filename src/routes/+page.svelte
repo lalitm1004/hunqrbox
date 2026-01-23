@@ -2,7 +2,7 @@
     import { QrCode } from "@lucide/svelte";
     import { qr } from "@svelte-put/qr/svg";
 
-    const MAX_CODE_LENGTH = 6;
+    const MAX_CODE_LENGTH = 5;
     const DEFAULT_TEXT = "https://www.youtube.com/watch?v=-XUxWllIpZk";
 
     let input = $state("");
@@ -38,7 +38,7 @@
 
             <div class={`grow grid place-items-center`}>
                 <svg
-                    class={`h-45 aspect-square`}
+                    class={`h-40 aspect-square`}
                     use:qr={{
                         data: display,
                         correction: "L",

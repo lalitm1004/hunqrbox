@@ -5,5 +5,10 @@
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<title>HunQRBox</title>
+	<meta name="description" content="bhaiya code daldo" />
+	<link rel="icon" href={favicon} />
+</svelte:head>
+
 {@render children()}
