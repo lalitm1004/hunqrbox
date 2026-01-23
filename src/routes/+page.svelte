@@ -3,10 +3,10 @@
     import { qr } from "@svelte-put/qr/svg";
 
     const MAX_CODE_LENGTH = 6;
-    const DEFAULT_TEXT = "https://www.youtube.com/watch?v=-XUxWllIpZk";
+    const DEFAULT_DISPLAY = "https://www.youtube.com/watch?v=-XUxWllIpZk";
 
     let input = $state("");
-    let display = $derived(input.trim() === "" ? DEFAULT_TEXT : input.trim());
+    let display = $derived(input || DEFAULT_DISPLAY);
 
     $effect(() => {
         const sanitized = input.replace(/\D/g, "").slice(0, MAX_CODE_LENGTH);
@@ -36,7 +36,7 @@
                 class={`h-10 w-[70%] text-center bg-violet-50 border border-neutral-300 rounded-lg`}
             />
 
-            <div class={`grow grid place-items-center`}>
+            <figure class={`grow grid place-items-center`}>
                 <svg
                     class={`h-40 aspect-square`}
                     use:qr={{
@@ -44,7 +44,7 @@
                         correction: "L",
                     }}
                 ></svg>
-            </div>
+            </figure>
         </form>
     </div>
 </main>
